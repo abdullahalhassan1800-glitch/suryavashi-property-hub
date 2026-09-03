@@ -216,6 +216,10 @@ h4 { font-size: 1.1rem; }
 
 /* ============================ FEATURES ============================ */
 .features { background: var(--grey-50); }
+
+/* Featured projects: tighten gap below the grid/button */
+.section-featured { padding-bottom: var(--sp-3); }
+.section-featured .mt-3 { margin-top: var(--sp-6); }
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--sp-5); }
 .feature-card {
   background: var(--white); padding: var(--sp-5); border-radius: var(--radius);
