@@ -214,6 +214,16 @@ h4 { font-size: 1.1rem; }
 .link-arrow { color: var(--gold); font-weight: 600; font-size: 0.9rem; }
 .link-arrow:hover { color: var(--gold-dark); }
 
+/* Project card details row */
+.proj-details {
+  margin-bottom: var(--sp-3);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px dashed var(--grey-200);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.pd-item { display: flex; align-items: center; gap: var(--sp-2); font-size: 0.82rem; color: var(--grey-700); }
+.pd-item .pd-ic { color: var(--gold); font-size: 0.95rem; min-width: 18px; text-align: center; }
+
 /* ============================ FEATURES ============================ */
 .features { background: var(--grey-50); }
 

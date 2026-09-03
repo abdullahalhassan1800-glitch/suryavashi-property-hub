@@ -227,6 +227,19 @@
     }).join("");
     var tagCls = p.tag === "New Launch" ? "" : " tag-navy";
     var page = "project-detail.html?id=" + p.id;
+
+    var detailsHtml = "";
+    if (p.details) {
+      var d = p.details;
+      detailsHtml =
+        '<div class="proj-details">' +
+          (d.area ? '<div class="pd-item"><span class="pd-ic">📐</span><span>' + d.area + "</span></div>" : "") +
+          (d.possession ? '<div class="pd-item"><span class="pd-ic">🗓️</span><span>' + d.possession + "</span></div>" : "") +
+          (d.rera ? '<div class="pd-item"><span class="pd-ic">✔</span><span>' + d.rera + "</span></div>" : "") +
+          (d.floors ? '<div class="pd-item"><span class="pd-ic">🏢</span><span>' + d.floors + "</span></div>" : "") +
+        "</div>";
+    }
+
     return (
       '<article class="proj-card reveal" data-category="' + p.type + '" data-upcoming="' + (p.status === "upcoming" || p.tag === "Upcoming") + '">' +
         '<a class="proj-media" href="' + page + '">' +
@@ -237,6 +250,7 @@
           '<div class="proj-loc">' + p.location + "</div>" +
           "<h3>" + p.name + "</h3>" +
           '<div class="proj-config">' + chips + "</div>" +
+          detailsHtml +
           '<div class="proj-foot">' +
             '<div class="proj-price">' + p.price + "</div>" +
             '<a class="link-arrow" href="' + page + '">View Details →</a>' +

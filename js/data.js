@@ -69,7 +69,14 @@ var VIHAAN = {
         { k: "Status", v: "New Launch" },
         { k: "RERA", v: "Registered" },
         { k: "Possession", v: "On Request" },
-      ]
+      ],
+      details: {
+        area: "Carpet Area: 1,050 – 1,650 sq.ft.",
+        possession: "Ready to Possess",
+        rera: "RERA Registered",
+        amenities: "Pool · Club House · Gym · Temple · Park",
+        floors: "G+15 Floors"
+      }
     },
     {
       id: "vihaan-wardenia",
@@ -100,7 +107,14 @@ var VIHAAN = {
         { k: "Status", v: "Upcoming" },
         { k: "RERA", v: "Registered" },
         { k: "Possession", v: "Coming Soon" },
-      ]
+      ],
+      details: {
+        area: "Configurable 1,100 – 2,200 sq.ft.",
+        possession: "Launch Details Coming Soon",
+        rera: "RERA Registered",
+        amenities: "Club House · Pool · Gym · Green Spaces",
+        floors: "Premium Residential & MFD"
+      }
     },
     {
       id: "suryavashi-hub",
@@ -128,7 +142,14 @@ var VIHAAN = {
         { k: "Status", v: "On Request" },
         { k: "RERA", v: "Registered" },
         { k: "Possession", v: "On Request" },
-      ]
+      ],
+      details: {
+        area: "Flexible Commercial Spaces",
+        possession: "On Request",
+        rera: "RERA Registered",
+        amenities: "High-footfall locations",
+        floors: "Retail / Office / Investment"
+      }
     },
   ],
 
