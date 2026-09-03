@@ -49,8 +49,7 @@
 
 /* ============================ RESET ============================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body {
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }body {
   font-family: var(--font-sans);
   color: var(--text);
   background: var(--white);
@@ -420,6 +419,58 @@ h4 { font-size: 1.1rem; }
 .reveal.revealed { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
 
+/* Hero entrance animation */
+.hero-content { opacity: 0; transform: translateY(24px); }
+.hero-content.hero-in { animation: heroIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards; }
+@keyframes heroIn { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .hero-content { opacity: 1; transform: none; } }
+
+/* Scroll-to-top button */
+.scroll-top {
+  position: fixed; right: 22px; bottom: 90px; z-index: 90;
+  width: 46px; height: 46px; border-radius: 50%; border: none;
+  background: var(--navy); color: var(--gold); font-size: 1.4rem; cursor: pointer;
+  box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s, background 0.25s;
+}
+.scroll-top.show { opacity: 1; visibility: visible; transform: none; }
+.scroll-top:hover { background: var(--gold); color: var(--navy); }
+
+/* Floating WhatsApp button */
+.wa-float {
+  position: fixed; right: 20px; bottom: 24px; z-index: 95;
+  display: flex; align-items: center; text-decoration: none;
+}
+.wa-icon {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: #25D366; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45); cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: waPulse 2s infinite;
+}
+.wa-float:hover .wa-icon { transform: scale(1.08); box-shadow: 0 8px 26px rgba(37, 211, 102, 0.6); }
+@keyframes waPulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.wa-tip {
+  background: var(--navy); color: var(--white); margin-left: 10px; padding: 0.5rem 0.9rem;
+  border-radius: 999px; font-size: 0.82rem; font-weight: 600; white-space: nowrap;
+  box-shadow: var(--shadow-md); opacity: 0; visibility: hidden; transform: translateX(-6px);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+.wa-float:hover .wa-tip { opacity: 1; visibility: visible; transform: none; }
+@media (max-width: 560px) {
+  .wa-icon { width: 54px; height: 54px; }
+  .wa-tip { display: none; }
+  .scroll-top { bottom: 90px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wa-icon { animation: none; }
+}
+
 .pd-main-media { width: 100%; height: 100%; min-height: 360px; border-radius: var(--radius); object-fit: cover; }
 
 /* ============================ FILTERS ============================ */
@@ -489,11 +540,37 @@ h4 { font-size: 1.1rem; }
   .pd-gallery { grid-template-columns: 1fr; }
   .pd-main { grid-row: auto; }
   .contact-form .form-row { grid-template-columns: 1fr; }
+  .hero { min-height: 72vh; }
+  .hero-content { max-width: 100%; }
+  .content, .pd-info { font-size: 0.98rem; }
 }
 @media (max-width: 560px) {
   .footer-grid { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .proj-grid, .blog-grid { grid-template-columns: 1fr; }
+  .container { padding-inline: var(--sp-4); }
+  section { padding-block: var(--sp-5); }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .hero {
+    min-height: 86vh;
+    padding-block: calc(var(--nav-h) + var(--sp-3)) var(--sp-6);
+    align-items: flex-end;
+    text-align: left;
+  }
+  .hero p { font-size: 1rem; }
+  .hero-actions .btn, .hero-actions .btn-lg { width: 100%; padding: 0.9rem 1.4rem; font-size: 1rem; }
+  .stats-grid { gap: var(--sp-4); }
+  .cta-actions .btn { width: 100%; }
+  .enq-card, .contact-form-wrap { padding: var(--sp-5); }
+  .newsletter-form input { width: 100%; flex: none; }
+  .newsletter-form .btn { width: 100%; }
+}
+@media (max-width: 380px) {
+  .hero h1 { font-size: 1.7rem; }
+  .hero-badge { font-size: 0.72rem; padding: 0.3rem 0.6rem; }
+  .stat-num { font-size: 1.8rem; }
+  .scroll-top { right: 14px; bottom: 82px; width: 42px; height: 42px; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

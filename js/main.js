@@ -6,6 +6,19 @@
 (function () {
   "use strict";
 
+  /* ---------- Deferred hero video (fast first paint, then enhance) ---------- */
+  var heroVideo = document.getElementById("heroVideo");
+  if (heroVideo) {
+    function playHeroVideo() {
+      try { heroVideo.muted = true; heroVideo.play().catch(function(){}); } catch (e) {}
+    }
+    if (document.readyState === "complete") {
+      setTimeout(playHeroVideo, 400);
+    } else {
+      window.addEventListener("load", function () { setTimeout(playHeroVideo, 400); }, { once: true });
+    }
+  }
+
   /* ---------- Sticky nav shadow ---------- */
   var nav = document.querySelector(".nav");
   function onScrollNav() {
@@ -66,19 +79,81 @@
   }
   animateCounters();
 
-  /* ---------- Reveal on scroll ---------- */
-  var revealEls = document.querySelectorAll(".reveal");
-  if (revealEls.length) {
-    var revObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add("revealed");
-          revObs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(function (el) { revObs.observe(el); });
+  /* ---------- Reveal on scroll (re-runnable for dynamic content) ---------- */
+  var revealObserver = null;
+  function initReveal() {
+    var els = document.querySelectorAll(".reveal:not(.revealed)");
+    if (!els.length) return;
+    if (revealObserver) {
+      revealObserver.disconnect();
+      revealObserver = null;
+    }
+    els.forEach(function (el) { el.classList.add("revealed"); });
+    if ("IntersectionObserver" in window) {
+      revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add("revealed");
+            revealObserver.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { revealObserver.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add("revealed"); });
+    }
   }
+  initReveal();
+
+  /* ---------- Smooth scroll for same-page anchors ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var targetId = a.getAttribute("href");
+      if (targetId.length <= 1) return;
+      var target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (history.replaceState) history.replaceState(null, "", targetId);
+      }
+    });
+  });
+
+  /* ---------- Scroll-to-top button ---------- */
+  var topBtn = document.createElement("button");
+  topBtn.className = "scroll-top";
+  topBtn.setAttribute("aria-label", "Scroll to top");
+  topBtn.innerHTML = "↑";
+  document.body.appendChild(topBtn);
+
+  /* ---------- Floating WhatsApp button ---------- */
+  var waBtn = document.createElement("a");
+  waBtn.className = "wa-float";
+  waBtn.setAttribute("href", "https://wa.me/919732300007?text=" + encodeURIComponent("Hello Vihaan Group, I'd like to enquire about Green Heaven."));
+  waBtn.setAttribute("target", "_blank");
+  waBtn.setAttribute("rel", "noopener");
+  waBtn.setAttribute("aria-label", "Chat on WhatsApp");
+  waBtn.innerHTML =
+    '<span class="wa-icon">' +
+      '<svg viewBox="0 0 32 32" width="28" height="28" fill="none">' +
+        '<path fill="#fff" d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.7C11.6 28.4 13.7 29 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.5c-2 0-3.9-.5-5.6-1.5l-.4-.2-4 .9 1-3.9-.3-.5c-1-1.6-1.6-3.5-1.6-5.4 0-5.9 4.8-10.7 10.7-10.7S26.7 11 26.7 16.9 21.9 26.5 16 26.5zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-.9 1.1-.4.3-.7.1c-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.6-.7c.2-.2.2-.3.3-.5s0-.4 0-.5c0-.2-.7-1.8-1-2.4-.3-.6-.5-.6-.7-.6h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1.1-1.1 2.6s1.2 3 1.3 3.2c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.7-.5z"/>' +
+      '</svg>' +
+    "</span>" +
+    '<span class="wa-tip">Chat with us</span>';
+  document.body.appendChild(waBtn);
+  function onScrollTop() {
+    if (window.scrollY > 500) topBtn.classList.add("show");
+    else topBtn.classList.remove("show");
+  }
+  window.addEventListener("scroll", onScrollTop, { passive: true });
+  topBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  onScrollTop();
+
+  /* Add .revealed to hero content on load for entrance */
+  var heroContent = document.querySelector(".hero-content");
+  if (heroContent) heroContent.classList.add("hero-in");
 
   /* ---------- Testimonials slider ---------- */
   var track = document.querySelector(".t-slide");
@@ -192,6 +267,7 @@
         "</article>";
     });
     blogContainer.innerHTML = bhtml;
+    initReveal();
   }
 
   /* ---------- Project detail page ---------- */
@@ -348,14 +424,23 @@
     var form = document.getElementById(formId);
     var msg = msgId ? document.getElementById(msgId) : null;
     if (!form) return;
+
+    function setMsg(ok, text) {
+      if (!msg) return;
+      msg.className = "form-msg " + (ok ? "ok" : "err");
+      msg.textContent = text;
+      msg.setAttribute("role", "alert");
+      if (msg.scrollIntoView) msg.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var valid = true;
-      var inputs = form.querySelectorAll("[required]");
-      inputs.forEach(function (input) {
+      form.querySelectorAll("[required]").forEach(function (input) {
         var isBad = !input.value.trim();
         input.style.borderColor = isBad ? "#c22" : "";
         if (isBad) valid = false;
+        else input.style.borderColor = "";
       });
       var email = form.querySelector('input[type="email"]');
       if (email && email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
@@ -363,19 +448,36 @@
         valid = false;
       }
       if (!valid) {
-        if (msg) { msg.className = "form-msg err"; msg.textContent = "Please fill the required fields correctly."; }
+        setMsg(false, "Please fill the required fields correctly.");
         return;
       }
-      if (msg) { msg.className = "form-msg ok"; msg.textContent = "Thank you! Your enquiry has been received. We will contact you shortly."; }
-      form.reset();
-      /* Optionally redirect to WhatsApp with prefilled message */
-      var wa = form.getAttribute("data-wa");
-      var p = document.getElementById("phone") || document.getElementById("enqPhone");
-      var n = document.getElementById("name") || document.getElementById("enqName");
-      if (wa && p && n && n.value) {
-        var text = encodeURIComponent("Hello " + VIHAAN.brand + ", I'd like to enquire about a property. (Name: " + n.value + ", Phone: " + p.value + ")");
-        window.open("https://wa.me/919732300007?text=" + text, "_blank");
+
+      // Collect name & phone from either enquire or contact form
+      var nameInp = document.getElementById("name") || document.getElementById("enqName");
+      var phoneInp = document.getElementById("phone") || document.getElementById("enqPhone");
+
+      var sendWa = form.hasAttribute("data-wa") && nameInp && phoneInp && phoneInp.value.trim();
+      var text = "";
+      if (sendWa) {
+        text = "Hello " + VIHAAN.brand + ", I'd like to enquire about your property.\n";
+        if (nameInp && nameInp.value) text += "Name: " + nameInp.value + "\n";
+        if (phoneInp && phoneInp.value) text += "Phone: " + phoneInp.value + "\n";
+        var projSel = form.querySelector("select");
+        if (projSel && projSel.value) text += "Interested in: " + projSel.value;
       }
+
+      // Show success locally
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) { var originalText = btn.textContent; btn.textContent = "Sending..."; btn.disabled = true; }
+
+      setTimeout(function () {
+        setMsg(true, "Thank you! Your enquiry has been received. We will contact you shortly.");
+        form.reset();
+        if (btn) { btn.textContent = originalText; btn.disabled = false; }
+        if (sendWa) {
+          window.open("https://wa.me/919732300007?text=" + encodeURIComponent(text), "_blank");
+        }
+      }, 300);
     });
   }
   attachForm("contactForm", "contactMsg");
