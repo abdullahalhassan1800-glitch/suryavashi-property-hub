@@ -268,8 +268,8 @@ h4 { font-size: 1.1rem; }
 .features { background: var(--grey-50); }
 
 /* Featured projects: tighten gap below the grid/button */
-.section-featured { padding-bottom: var(--sp-3); }
-.section-featured .mt-3 { margin-top: var(--sp-6); }
+.section-featured { padding-block: var(--sp-3); }
+.section-featured .mt-3 { margin-top: var(--sp-2); }
 
 /* Compact project cards in the featured/home section */
 .section-featured .proj-grid { gap: var(--sp-4); }
