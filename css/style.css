@@ -220,6 +220,16 @@ h4 { font-size: 1.1rem; }
 /* Featured projects: tighten gap below the grid/button */
 .section-featured { padding-bottom: var(--sp-3); }
 .section-featured .mt-3 { margin-top: var(--sp-6); }
+
+/* Compact project cards in the featured/home section */
+.section-featured .proj-grid { gap: var(--sp-4); }
+.section-featured .proj-card .proj-body { padding: var(--sp-4); }
+.section-featured .proj-card .proj-body h3 { margin-bottom: var(--sp-2); font-size: 1.2rem; }
+.section-featured .proj-config { margin-bottom: var(--sp-3); gap: var(--sp-1); }
+.section-featured .proj-foot { padding-top: var(--sp-3); }
+.section-featured .proj-loc { font-size: 0.8rem; margin-bottom: var(--sp-1); }
+.section-featured .section-head { margin-bottom: var(--sp-5); }
+.section-featured .section-head p { margin-top: var(--sp-2); }
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--sp-5); }
 .feature-card {
   background: var(--white); padding: var(--sp-5); border-radius: var(--radius);
