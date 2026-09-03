@@ -1,0 +1,6 @@
+# Ignore cache/temp
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# No build tooling used; keep source images checked in for the site
