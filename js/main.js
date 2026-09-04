@@ -264,7 +264,10 @@
   if (document.getElementById("projGrid")) buildProjectCards("projGrid", {});
 
   /* ---------- Project type filter (supports "Upcoming" tag) ---------- */
-  if (document.getElementById("projGridFeatured")) buildProjectCards("projGridFeatured", { limit: 3 });
+  if (document.getElementById("projGridFeatured")) {
+    buildProjectCards("projGridFeatured", { limit: 3 });
+    initReveal();
+  }
   if (document.getElementById("blogGrid")) {
     var blogContainer = document.getElementById("blogGrid");
     var bhtml = "";
