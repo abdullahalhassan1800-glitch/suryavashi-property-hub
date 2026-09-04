@@ -273,11 +273,13 @@ h4 { font-size: 1.1rem; }
 
 /* Compact project cards in the featured/home section */
 .section-featured .proj-grid { gap: var(--sp-4); }
-.section-featured .proj-card .proj-body { padding: var(--sp-4); }
-.section-featured .proj-card .proj-body h3 { margin-bottom: var(--sp-2); font-size: 1.2rem; }
-.section-featured .proj-config { margin-bottom: var(--sp-3); gap: var(--sp-1); }
-.section-featured .proj-foot { padding-top: var(--sp-3); }
+.section-featured .proj-card .proj-body { padding: var(--sp-3) var(--sp-4); }
+.section-featured .proj-card .proj-body h3 { margin-bottom: var(--sp-1); font-size: 1.15rem; }
+.section-featured .proj-config { margin-bottom: var(--sp-1); gap: var(--sp-1); }
+.section-featured .proj-foot { padding-top: var(--sp-2); }
 .section-featured .proj-loc { font-size: 0.8rem; margin-bottom: var(--sp-1); }
+.section-featured .proj-details { gap: 3px; margin-bottom: var(--sp-1); padding-bottom: var(--sp-2); }
+.section-featured .pd-item { font-size: 0.78rem; }
 .section-featured .section-head { margin-bottom: var(--sp-5); }
 .section-featured .section-head p { margin-top: var(--sp-2); }
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--sp-5); }
