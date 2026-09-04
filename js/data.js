@@ -1,17 +1,17 @@
 /* ==========================================================================
-   VIHAAN GROUP — Data Layer
+   Suryavashi Property Hub — Data Layer
    Central source of truth for projects & blog content.
    ========================================================================== */
 
 var VIHAAN = {
-  brand: "Vihaan Group",
+  brand: "Suryavashi Property Hub",
   tagline: "Crafting Trustworthy Homes & Premium Spaces",
   phone: "+91-XXXXX XXXXX",
   phoneHref: "tel:+919732300007",
   whatsapp: "https://wa.me/919732300007",
-  email: "info@vihaangroup.com",
+  email: "info@suryavashiproperty.com",
   address: "Sector 16, Greater Noida West, Uttar Pradesh, India",
-  rera: "Vihaan Group — RERA Registered Projects",
+  rera: "Suryavashi Property Hub — RERA Registered Projects",
 
   amenities: [
     { icon: "🏊", name: "Swimming Pool" },
@@ -35,7 +35,7 @@ var VIHAAN = {
       price: "Starting at ₹XX Lakh*",
       tag: "New Launch",
       status: "featured",
-      developer: "Vihaan Group",
+      developer: "Suryavashi Property Hub",
       image: "images/projects/green-heaven-1.jpg?v=12",
       gallery: [
         "images/projects/green-heaven-1.jpg",
@@ -59,7 +59,7 @@ var VIHAAN = {
       rera: "RERA Registered",
       possession: "Contact us for details",
       description:
-        "Green Heaven is a thoughtfully crafted gated residential community by Vihaan Group, balancing modern comfort with an eco-conscious, greenery-rich living experience. Nestled in Sector 16, Greater Noida West near Sparsh Global School, it offers 2 & 3 BHK residences designed for families who value space, safety and serenity.",
+        "Green Heaven is a thoughtfully crafted gated residential community by Suryavashi Property Hub, balancing modern comfort with an eco-conscious, greenery-rich living experience. Nestled in Sector 16, Greater Noida West near Sparsh Global School, it offers 2 & 3 BHK residences designed for families who value space, safety and serenity.",
       longDescription:
         "Green Heaven reimagines everyday living with vibrant landscaping, open courtyards and premium common amenities. Every residence is planned with generous natural light, efficient layouts and high-quality finishes. As a gated society, residents enjoy protected common areas, dedicated parking and round-the-clock security — a true sanctuary amid the fast-growing Noida West corridor. Positioned close to schools, retail and upcoming infrastructure, Green Heaven is equally suited for end-users and long-term investors seeking balanced appreciation.",
       facts: [
@@ -87,7 +87,7 @@ var VIHAAN = {
       price: "Coming Soon",
       tag: "Upcoming",
       status: "upcoming",
-      developer: "Vihaan Group",
+      developer: "Suryavashi Property Hub",
       image: "images/projects/vihaan-wardenia-1.jpg",
       gallery: [
         "images/projects/vihaan-wardenia-1.jpg",
@@ -97,7 +97,7 @@ var VIHAAN = {
       rera: "RERA Registered",
       possession: "Coming Soon",
       description:
-        "Vihaan Wardenia is an upcoming premium residential offering from Vihaan Group, bringing signature quality and lifestyle amenities to the Greater Noida West landscape.",
+        "Vihaan Wardenia is an upcoming premium residential offering from Suryavashi Property Hub, bringing signature quality and lifestyle amenities to the Greater Noida West landscape.",
       longDescription:
         "Vihaan Wardenia is poised to set a new benchmark for community living with expansive layouts, resort-style amenities and a prime North NCR location. Stay tuned for full details, floor plans and launch pricing.",
       facts: [
@@ -125,7 +125,7 @@ var VIHAAN = {
       price: "On Request",
       tag: "Commercial",
       status: "commercial",
-      developer: "Suryavashi Group",
+      developer: "Suryavashi Property Hub",
       image: "images/suryavashi-hub.png",
       gallery: ["images/suryavashi-hub.png"],
       video: null,
@@ -163,7 +163,7 @@ var VIHAAN = {
   testimonials: [
     {
       quote:
-        "Vihaan Group guided us through the entire purchase with complete clarity. The team was transparent, responsive and made the process feel effortless.",
+        "Suryavashi Property Hub guided us through the entire purchase with complete clarity. The team was transparent, responsive and made the process feel effortless.",
       author: "Rahul Sharma",
       role: "Home Buyer, Green Heaven",
     },
@@ -191,7 +191,7 @@ var VIHAAN = {
       date: "Sep 02, 2026",
       read: "4 min read",
       excerpt:
-        "Discover how Green Heaven by Vihaan Group blends gated security, lush landscaping and premium 2 & 3 BHK residences in the heart of Greater Noida West.",
+        "Discover how Green Heaven by Suryavashi Property Hub blends gated security, lush landscaping and premium 2 & 3 BHK residences in the heart of Greater Noida West.",
     },
     {
       id: "noida-west-growth",

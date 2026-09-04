@@ -1,5 +1,5 @@
 /* ==========================================================================
-   VIHAAN GROUP — Main JS
+   SURYAVASHI PROPERTY HUB — Main JS
    Nav, mobile menu, counters, carousel, testimonials, filters, gallery,
    forms, lightbox.
    ========================================================================== */
@@ -129,7 +129,7 @@
   /* ---------- Floating WhatsApp button ---------- */
   var waBtn = document.createElement("a");
   waBtn.className = "wa-float";
-  waBtn.setAttribute("href", "https://wa.me/919732300007?text=" + encodeURIComponent("Hello Vihaan Group, I'd like to enquire about Green Heaven."));
+  waBtn.setAttribute("href", "https://wa.me/919732300007?text=" + encodeURIComponent("Hello Suryavashi Property Hub, I'd like to enquire about Green Heaven."));
   waBtn.setAttribute("target", "_blank");
   waBtn.setAttribute("rel", "noopener");
   waBtn.setAttribute("aria-label", "Chat on WhatsApp");
