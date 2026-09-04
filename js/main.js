@@ -261,7 +261,10 @@
   }
 
   /* Attach renderers if present */
-  if (document.getElementById("projGrid")) buildProjectCards("projGrid", {});
+  if (document.getElementById("projGrid")) {
+    buildProjectCards("projGrid", {});
+    initReveal();
+  }
 
   /* ---------- Project type filter (supports "Upcoming" tag) ---------- */
   if (document.getElementById("projGridFeatured")) {
