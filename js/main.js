@@ -167,6 +167,35 @@
   });
   onScrollTop();
 
+  /* Wrap each hero headline word so it rises from a mask (CDANA-style text animation) */
+  function splitHeroWords(el) {
+    var index = 0;
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+        if (child.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part || part.trim() === "") return;
+            var w = document.createElement("span");
+            w.className = "w";
+            var wi = document.createElement("span");
+            wi.className = "wi";
+            wi.style.animationDelay = (0.2 + index * 0.09).toFixed(2) + "s";
+            wi.textContent = part;
+            w.appendChild(wi);
+            frag.appendChild(w);
+            index++;
+          });
+          child.parentNode.replaceChild(frag, child);
+        } else if (child.nodeType === 1 && /^(SPAN|STRONG|EM)$/.test(child.tagName)) {
+          walk(child);
+        }
+      });
+    })(el);
+  }
+  var heroH1 = document.querySelector(".hero h1");
+  if (heroH1) splitHeroWords(heroH1);
+
   /* Add .revealed to hero content on load for entrance */
   var heroContent = document.querySelector(".hero-content");
   if (heroContent) heroContent.classList.add("hero-in");
