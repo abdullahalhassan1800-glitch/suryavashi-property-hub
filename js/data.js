@@ -36,7 +36,7 @@ var VIHAAN = {
       tag: "New Launch",
       status: "featured",
       developer: "Vihaan Group",
-      image: "images/projects/green-heaven-1.jpg",
+      image: "images/projects/green-heaven-1.jpg?v=12",
       gallery: [
         "images/projects/green-heaven-1.jpg",
         "images/projects/green-heaven-2.jpg",
