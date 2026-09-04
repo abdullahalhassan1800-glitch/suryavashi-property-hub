@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdullahalhassan1800-glitch.github.io/suryavashi-property-hub/sitemap.xml

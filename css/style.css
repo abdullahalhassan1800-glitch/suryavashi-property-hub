@@ -251,6 +251,15 @@ h4 { font-size: 1.1rem; }
 .proj-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--grey-100); padding-top: var(--sp-4); }
 .proj-price { font-family: var(--font-serif); color: var(--navy); font-weight: 700; font-size: 1.2rem; }
 .proj-price small { display: block; font-family: var(--font-sans); font-size: 0.75rem; color: var(--grey-500); font-weight: 500; }
+.proj-price-call {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-sans); font-size: 0.92rem; font-weight: 700;
+  color: var(--gold-dark); background: rgba(212, 165, 44, 0.12);
+  border: 1px solid rgba(212, 165, 44, 0.35); border-radius: 999px;
+  padding: 0.35rem 0.9rem; transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+.proj-price-call:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.proj-price-call .pd-ic { font-size: 0.9rem; min-width: auto; }
 .link-arrow { color: var(--gold); font-weight: 600; font-size: 0.9rem; }
 .link-arrow:hover { color: var(--gold-dark); }
 
@@ -499,15 +508,16 @@ h4 { font-size: 1.1rem; }
 .lightbox .lb-close { position: absolute; top: 24px; right: 28px; color: var(--white); font-size: 2rem; background: none; border: none; }
 
 /* ============================ REVEAL ============================ */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.revealed { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+/* Gated behind .js on <html>: if JS fails or is disabled, content stays visible. */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js .reveal.revealed { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }
 
 /* Hero entrance animation */
-.hero-content { opacity: 0; transform: translateY(24px); }
-.hero-content.hero-in { animation: heroIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards; }
+.js .hero-content { opacity: 0; transform: translateY(24px); }
+.js .hero-content.hero-in { animation: heroIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards; }
 @keyframes heroIn { to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .hero-content { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .js .hero-content { opacity: 1; transform: none; } }
 
 /* Scroll-to-top button */
 .scroll-top {

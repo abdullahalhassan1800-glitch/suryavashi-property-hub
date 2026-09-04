@@ -13,6 +13,13 @@ var VIHAAN = {
   address: "Sector 16, Greater Noida West, Uttar Pradesh, India",
   rera: "Suryavashi Property Hub — RERA Registered Projects",
 
+  /*
+   * Google Sheets form endpoint (see FORM-SETUP.md).
+   * Paste your deployed Google Apps Script Web App URL here.
+   * Empty string = forms keep working with WhatsApp popup only.
+   */
+  formEndpoint: "",
+
   amenities: [
     { icon: "🏊", name: "Swimming Pool" },
     { icon: "🏛️", name: "Club House" },
@@ -32,7 +39,8 @@ var VIHAAN = {
       type: "Residential",
       location: "Sector 16, Greater Noida West (near Sparsh Global School)",
       configs: ["2 BHK", "3 BHK"],
-      price: "Starting at ₹XX Lakh*",
+      price: "Call for Price",
+      callForPrice: true,
       tag: "New Launch",
       status: "featured",
       developer: "Suryavashi Property Hub",

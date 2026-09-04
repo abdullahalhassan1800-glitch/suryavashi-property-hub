@@ -6,6 +6,9 @@
 (function () {
   "use strict";
 
+  /* Flag JS availability for progressive enhancement (CSS gates .reveal) */
+  document.documentElement.classList.add("js");
+
   /* ---------- Deferred hero video (fast first paint, then enhance) ---------- */
   var heroVideo = document.getElementById("heroVideo");
   if (heroVideo) {
@@ -104,6 +107,19 @@
     }
   }
   initReveal();
+
+  /* Safety net: reveal any .reveal that enters the viewport, even elements
+     injected dynamically without an initReveal() call after build. Polling
+     guarantees no card can ever stay hidden invisibly. */
+  function revealCheck() {
+    document.querySelectorAll(".reveal:not(.revealed)").forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.95 && r.bottom > 0) el.classList.add("revealed");
+    });
+  }
+  window.addEventListener("scroll", revealCheck, { passive: true });
+  window.addEventListener("resize", revealCheck, { passive: true });
+  setInterval(revealCheck, 800);
 
   /* ---------- Smooth scroll for same-page anchors ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
@@ -240,6 +256,15 @@
         "</div>";
     }
 
+    var priceHtml =
+      '<div class="proj-price">' + p.price + "</div>";
+    if (p.callForPrice) {
+      priceHtml =
+        '<a class="proj-price proj-price-call" href="' + VIHAAN.whatsapp +
+          "?text=" + encodeURIComponent("Hello " + VIHAAN.brand + ", I'd like to know the price and details of " + p.name + ".") +
+          '" target="_blank" rel="noopener"><span class="pd-ic">💬</span>Call for Price</a>';
+    }
+
     return (
       '<article class="proj-card reveal" data-category="' + p.type + '" data-upcoming="' + (p.status === "upcoming" || p.tag === "Upcoming") + '">' +
         '<a class="proj-media" href="' + page + '">' +
@@ -252,7 +277,7 @@
           '<div class="proj-config">' + chips + "</div>" +
           detailsHtml +
           '<div class="proj-foot">' +
-            '<div class="proj-price">' + p.price + "</div>" +
+            priceHtml +
             '<a class="link-arrow" href="' + page + '">View Details →</a>' +
           "</div>" +
         "</div>" +
@@ -282,7 +307,7 @@
             '<div class="blog-meta"><span class="cat">' + b.cat + "</span> · " + b.date + " · " + b.read + "</div>" +
             "<h3>" + b.title + "</h3>" +
             "<p>" + b.excerpt + "</p>" +
-            '<a class="link-arrow" href="#">Continue Reading →</a>' +
+            '<a class="link-arrow" href="contact.html">Continue Reading →</a>' +
           "</div>" +
         "</article>";
     });
@@ -359,7 +384,14 @@
     function setText(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; }
     setText("pdTitle", p.name);
     setText("pdLoc", p.location);
-    setText("pdPrice", p.price);
+    var priceEl = document.getElementById("pdPrice");
+    if (priceEl) {
+      priceEl.innerHTML = p.callForPrice
+        ? '<a href="' + VIHAAN.whatsapp +
+            "?text=" + encodeURIComponent("Hello " + VIHAAN.brand + ", I'd like to know the price and details of " + p.name + ".") +
+            '" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; color:var(--gold); font-weight:700;">💬 Call for Price</a>'
+        : p.price;
+    }
     setText("pdDesc", p.description);
     setText("pdLong", p.longDescription);
     document.title = p.name + " | " + VIHAAN.brand;
@@ -484,6 +516,29 @@
         if (phoneInp && phoneInp.value) text += "Phone: " + phoneInp.value + "\n";
         var projSel = form.querySelector("select");
         if (projSel && projSel.value) text += "Interested in: " + projSel.value;
+      }
+
+      // Send a copy to Google Sheets (Apps Script Web App), if configured.
+      // Content-Type text/plain + no-cors avoids CORS preflight (Apps Script appends rows regardless).
+      if (VIHAAN.formEndpoint) {
+        var payload = {
+          form: form.id,
+          page: window.location.pathname.split("/").pop() + window.location.search,
+          date: new Date().toLocaleString("en-IN"),
+          name: (nameInp && nameInp.value) || "",
+          phone: (phoneInp && phoneInp.value) || "",
+          email: (form.querySelector('input[type="email"]') || { value: "" }).value || "",
+          interested: (form.querySelector("select") || { value: "" }).value || "",
+          message: (form.querySelector("textarea") || { value: "" }).value || ""
+        };
+        try {
+          fetch(VIHAAN.formEndpoint, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(payload)
+          }).catch(function () {});
+        } catch (e) {}
       }
 
       // Show success locally
