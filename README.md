@@ -12,7 +12,7 @@ A static real estate website for **Vihaan Group**, featuring the **Green Heaven*
 
 ## Tech
 - Pure HTML / CSS / JavaScript (no framework, no build step)
-- Design system: Gold `#D4A52C`, Deep Navy `#08294A`, White `#FFFFFF`
+- Design system: Gold `#D4A52C`, Deep Emerald `#0B3B2E`, White `#FFFFFF`
 - `js/data.js` — central content (projects, blogs, testimonials, amenities)
 - `js/main.js` — interactivity (nav, counters, sliders, filters, lightbox, forms)
 

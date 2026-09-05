@@ -1,6 +1,6 @@
 /* ==========================================================================
    VIHAAN GROUP — Luxury Real Estate Website
-   Design System: Gold #D4A52C / Deep Navy #08294A / White #FFFFFF
+   Design System: Gold #D4A52C / Deep Emerald #0B3B2E / White #FFFFFF
    ========================================================================== */
 
 :root {
@@ -9,23 +9,23 @@
   --gold-dark: #a8871a;
   --gold-light: #e9c86a;
   --gold-soft: #f6e5b6;
-  --navy: #071f3a;
-  --navy-800: #0b2c4f;
-  --navy-700: #103a63;
-  --navy-600: #164a7d;
-  --navy-100: #d7e3f2;
-  --navy-50: #eef4fb;
+  --navy: #0B3B2E;
+  --navy-800: #104A3A;
+  --navy-700: #165B47;
+  --navy-600: #1D6D55;
+  --navy-100: #DAEDE4;
+  --navy-50: #F0F7F3;
   --white: #FFFFFF;
   --grey-50: #f7f8fa;
   --grey-100: #eef0f4;
   --grey-200: #dde1e8;
   --grey-500: #8892a0;
   --grey-700: #46535f;
-  --text: #1b2733;
+  --text: #19241F;
 
   /* Typography */
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Fraunces", "Playfair Display", Georgia, serif;
+  --font-sans: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Spacing */
   --sp-1: 0.25rem;
@@ -39,9 +39,9 @@
   --sp-9: 6rem;
 
   /* Effects */
-  --shadow-sm: 0 1px 3px rgba(7, 31, 58, 0.08);
-  --shadow-md: 0 8px 28px rgba(7, 31, 58, 0.10);
-  --shadow-lg: 0 18px 52px rgba(7, 31, 58, 0.16);
+  --shadow-sm: 0 1px 3px rgba(11, 59, 46, 0.08);
+  --shadow-md: 0 8px 28px rgba(11, 59, 46, 0.10);
+  --shadow-lg: 0 18px 52px rgba(11, 59, 46, 0.16);
   --shadow-gold: 0 8px 26px rgba(212, 165, 44, 0.32);
   --radius: 14px;
   --radius-lg: 24px;
@@ -148,12 +148,12 @@ h4 { font-size: 1.02rem; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: linear-gradient(180deg, rgba(7, 31, 58, 0.94) 0%, rgba(7, 31, 58, 0.88) 100%);
+  background: linear-gradient(180deg, rgba(11, 59, 46, 0.94) 0%, rgba(11, 59, 46, 0.88) 100%);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(212, 165, 44, 0.12);
   transition: box-shadow 0.3s, background 0.3s;
 }
-.nav.scrolled { box-shadow: var(--shadow-md); background: rgba(7, 31, 58, 0.97); border-bottom-color: rgba(212, 165, 44, 0.25); }
+.nav.scrolled { box-shadow: var(--shadow-md); background: rgba(11, 59, 46, 0.97); border-bottom-color: rgba(212, 165, 44, 0.25); }
 .nav::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; z-index: 1;
   background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 45%, rgba(212, 165, 44, 0) 100%);
@@ -218,7 +218,7 @@ h4 { font-size: 1.02rem; }
 @media (prefers-reduced-motion: reduce) {
   .hero-media img, .hero-media video { animation: none; }
 }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(112deg, rgba(7,31,58,0.78) 5%, rgba(7,31,58,0.48) 48%, rgba(7,31,58,0.16) 100%); z-index: 1; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(112deg, rgba(11,59,46,0.78) 5%, rgba(11,59,46,0.48) 48%, rgba(11,59,46,0.16) 100%); z-index: 1; }
 .hero-content { position: relative; z-index: 2; max-width: 600px; margin-inline: 0; }
 .hero .eyebrow { color: var(--gold-light); margin-bottom: var(--sp-2); }
 .hero h1 { color: var(--white); margin-bottom: var(--sp-2); font-size: clamp(1.9rem, 4.2vw, 2.85rem); font-weight: 600; letter-spacing: -0.01em; line-height: 1.12; }
@@ -301,14 +301,14 @@ h4 { font-size: 1.02rem; }
 .proj-card:hover .proj-media img { transform: scale(1.07); filter: brightness(0.84) saturate(1.05); }
 .proj-media::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(7,31,58,0.30), transparent 45%);
+  background: linear-gradient(to top, rgba(11,59,46,0.30), transparent 45%);
   opacity: 0; transition: opacity 0.3s ease;
 }
 .proj-card:hover .proj-media::after { opacity: 1; }
 .proj-tag {
   position: absolute; top: var(--sp-3); left: var(--sp-3);
   background: linear-gradient(135deg, var(--gold-light), var(--gold)); color: var(--navy); font-size: 0.72rem; font-weight: 700;
-  padding: 0.32rem 0.75rem; border-radius: 999px; letter-spacing: 0.05em; box-shadow: 0 3px 10px rgba(7,31,58,0.18);
+  padding: 0.32rem 0.75rem; border-radius: 999px; letter-spacing: 0.05em; box-shadow: 0 3px 10px rgba(11,59,46,0.18);
 }
 .proj-tag.tag-navy { background: linear-gradient(135deg, var(--navy-700), var(--navy)); color: var(--white); }
 .proj-body { padding: var(--sp-4); display: flex; flex-direction: column; flex: 1; }
@@ -505,7 +505,7 @@ h4 { font-size: 1.02rem; }
 .pd-thumb { border-radius: var(--radius); overflow: hidden; cursor: pointer; position: relative; aspect-ratio: 4/3; }
 .pd-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
 .pd-thumb:hover img { transform: scale(1.05); }
-.pd-thumb.video::after { content: "▶"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.6rem; background: rgba(8,41,74,0.3); }
+.pd-thumb.video::after { content: "▶"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.6rem; background: rgba(11,59,46,0.3); }
 
 .pd-layout { display: grid; grid-template-columns: 1fr 380px; gap: var(--sp-4); margin-top: var(--sp-4); }
 .pd-info h2 { margin-bottom: var(--sp-4); }
@@ -596,7 +596,7 @@ h4 { font-size: 1.02rem; }
 
 /* ============================ LIGHTBOX ============================ */
 .lightbox {
-  position: fixed; inset: 0; background: rgba(4, 18, 34, 0.94); display: none;
+  position: fixed; inset: 0; background: rgba(6, 28, 22, 0.94); display: none;
   align-items: center; justify-content: center; z-index: 200; cursor: zoom-out;
 }
 .lightbox.open { display: flex; }
