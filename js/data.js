@@ -124,41 +124,6 @@ var VIHAAN = {
         floors: "Premium Residential & MFD"
       }
     },
-    {
-      id: "suryavashi-hub",
-      name: "Suryavashi Property Hub",
-      type: "Commercial",
-      location: "Consult our team",
-      configs: ["Commercial Spaces"],
-      price: "On Request",
-      tag: "Commercial",
-      status: "commercial",
-      developer: "Suryavashi Property Hub",
-      image: "images/suryavashi-hub.png",
-      gallery: ["images/suryavashi-hub.png"],
-      video: null,
-      rera: "RERA Registered",
-      possession: "On Request",
-      description:
-        "Suryavashi Property Hub offers curated commercial and property solutions, helping investors identify high-growth opportunities with supported guidance.",
-      longDescription:
-        "Suryavashi Property Hub connects buyers and investors with a curated portfolio of residential and commercial opportunities, backed by transparent guidance and deep market knowledge.",
-      facts: [
-        { k: "Project Type", v: "Commercial" },
-        { k: "Configurations", v: "Commercial Spaces" },
-        { k: "Location", v: "Consult our team" },
-        { k: "Status", v: "On Request" },
-        { k: "RERA", v: "Registered" },
-        { k: "Possession", v: "On Request" },
-      ],
-      details: {
-        area: "Flexible Commercial Spaces",
-        possession: "On Request",
-        rera: "RERA Registered",
-        amenities: "High-footfall locations",
-        floors: "Retail / Office / Investment"
-      }
-    },
   ],
 
   getProject: function (id) {
