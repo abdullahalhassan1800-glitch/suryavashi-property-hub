@@ -245,6 +245,42 @@ h4 { font-size: 1.02rem; }
 .stat-num { font-family: var(--font-serif); font-size: clamp(1.45rem, 2.6vw, 1.9rem); color: var(--gold-light); font-weight: 700; line-height: 1.1; }
 .stat-label { color: rgba(255,255,255,0.78); margin-top: 0; font-size: 0.8rem; letter-spacing: 0.03em; }
 
+/* ============================ TRUST TICKER ============================ */
+.trust-ticker {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-800) 100%);
+  border-block: 1px solid rgba(212, 165, 44, 0.28);
+  overflow: hidden;
+}
+.tt-strip { display: flex; align-items: stretch; height: 46px; }
+.tt-label {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: var(--navy); font-size: 0.72rem; font-weight: 800;
+  letter-spacing: 0.13em; padding: 0 1.1rem; white-space: nowrap; flex: none;
+}
+.tt-viewport { flex: 1; overflow: hidden; display: flex; align-items: center; }
+.tt-track { display: inline-flex; width: max-content; animation: ttScroll 30s linear infinite; will-change: transform; }
+.tt-group { display: inline-flex; }
+@keyframes ttScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.trust-ticker:hover .tt-track { animation-play-state: paused; }
+.tt-item {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.9); font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 0 1.6rem; white-space: nowrap; position: relative;
+}
+.tt-item::after {
+  content: "◆"; position: absolute; right: 0.3em; color: var(--gold); font-size: 0.5rem;
+}
+.tt-ic { color: var(--gold); font-weight: 800; }
+@media (max-width: 560px) {
+  .tt-label { padding: 0 0.8rem; font-size: 0.66rem; }
+  .tt-item { padding: 0 1.05rem; font-size: 0.74rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trust-ticker .tt-track { animation: none; }
+}
+
 /* ============================ CARDS / PROJECT ============================ */
 .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--sp-5); }
 .proj-card {

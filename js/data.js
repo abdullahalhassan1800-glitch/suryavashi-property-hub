@@ -13,6 +13,18 @@ var VIHAAN = {
   address: "Sector 16, Greater Noida West, Uttar Pradesh, India",
   rera: "Suryavashi Property Hub — RERA Registered Projects",
 
+  /* Trust badges shown in the homepage running ticker */
+  trust: [
+    "RERA Registered Project",
+    "Bank Tie-ups · HDFC · ICICI",
+    "100% Transparent Process",
+    "Free Site Visit & Consultation",
+    "Greater Noida West · Sector 16",
+    "No Hidden Charges",
+    "24×7 Customer Support",
+    "Verified RERA Compliance",
+  ],
+
   /*
    * Google Sheets form endpoint (see FORM-SETUP.md).
    * Paste your deployed Google Apps Script Web App URL here.

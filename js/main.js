@@ -600,4 +600,25 @@
       branchInfo.textContent = branches[branchSel.value] || branches[Object.keys(branches)[0]];
     });
   }
+/* ---------- Trust badge running ticker (homepage) ---------- */
+  var trustWrap = document.getElementById("trustTicker");
+  if (trustWrap && VIHAAN.trust && VIHAAN.trust.length) {
+    var items = VIHAAN.trust.map(function (t) {
+      return (
+        '<span class="tt-item">' +
+        '<span class="tt-ic" aria-hidden="true">&#10003;</span>' +
+        t +
+        "</span>"
+      );
+    }).join("");
+    var doubled = items + items;
+    trustWrap.innerHTML =
+      '<div class="tt-strip">' +
+        '<span class="tt-label" aria-hidden="true">&#10022; TRUSTED</span>' +
+        '<div class="tt-viewport" aria-label="Trust badges">' +
+          '<div class="tt-track"><span class="tt-group">' + doubled + "</span></div>" +
+        "</div>" +
+      "</div>";
+  }
+
 })();
