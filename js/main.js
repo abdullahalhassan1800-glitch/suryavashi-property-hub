@@ -9,6 +9,11 @@
   /* Flag JS availability for progressive enhancement (CSS gates .reveal) */
   document.documentElement.classList.add("js");
 
+  /* Absolute base used when building image/link paths for any page depth.
+     On GitHub Pages the site lives at /suryavashi-property-hub/, locally at /. */
+  var repoBase = "/suryavashi-property-hub";
+  var BASE = location.pathname.indexOf(repoBase) === 0 ? repoBase + "/" : "/";
+
   /* ---------- Deferred hero video (fast first paint, then enhance) ---------- */
   var heroVideo = document.getElementById("heroVideo");
   if (heroVideo) {
@@ -271,7 +276,7 @@
       return '<span class="chip">' + c + "</span>";
     }).join("");
     var tagCls = p.tag === "New Launch" ? "" : " tag-navy";
-    var page = "project-detail.html?id=" + p.id;
+    var page = BASE + "project-detail/?id=" + p.id;
 
     var detailsHtml = "";
     if (p.details) {
@@ -298,7 +303,7 @@
       '<article class="proj-card reveal" data-category="' + p.type + '" data-upcoming="' + (p.status === "upcoming" || p.tag === "Upcoming") + '">' +
         '<a class="proj-media" href="' + page + '">' +
           '<span class="proj-tag' + tagCls + '">' + p.tag + "</span>" +
-          '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy">' +
+          '<img src="' + BASE + p.image + '" alt="' + p.name + '" loading="lazy">' +
         "</a>" +
         '<div class="proj-body">' +
           '<div class="proj-loc">' + p.location + "</div>" +
@@ -331,12 +336,12 @@
     VIHAAN.blogs.forEach(function (b) {
       bhtml +=
         '<article class="blog-card reveal">' +
-          '<div class="blog-media"><img src="' + b.image + '" alt="' + b.title + '" loading="lazy"></div>' +
+          '<div class="blog-media"><img src="' + BASE + b.image + '" alt="' + b.title + '" loading="lazy"></div>' +
           '<div class="blog-body">' +
             '<div class="blog-meta"><span class="cat">' + b.cat + "</span> · " + b.date + " · " + b.read + "</div>" +
             "<h3>" + b.title + "</h3>" +
             "<p>" + b.excerpt + "</p>" +
-            '<a class="link-arrow" href="contact.html">Continue Reading →</a>' +
+            '<a class="link-arrow" href="' + BASE + 'contact/">Continue Reading →</a>' +
           "</div>" +
         "</article>";
     });
@@ -379,25 +384,26 @@
         }
       }
       var media = p.gallery.slice();
-      if (p.video) media = [p.video].concat(p.gallery);
+      var videos = (p.videos && p.videos.length) ? p.videos : (p.video ? [p.video] : []);
+      if (videos.length) media = videos.concat(p.gallery);
       var thtml = "";
       media.forEach(function (m, i) {
         var isV = m.indexOf(".mp4") !== -1 || m.indexOf(".webm") !== -1;
         thtml +=
-          '<div class="pd-thumb' + (isV ? " video" : "") + '" data-src="' + m + '" data-video="' + isV + '">' +
-            (isV ? '<img src="' + p.image + '" alt="video preview">' : '<img src="' + m + '" alt="' + p.name + ' gallery ' + (i + 1) + '">') +
+          '<div class="pd-thumb' + (isV ? " video" : "") + '" data-src="' + BASE + m + '" data-video="' + isV + '">' +
+            (isV ? '<img src="' + BASE + p.image + '" alt="video preview">' : '<img src="' + BASE + m + '" alt="' + p.name + ' gallery ' + (i + 1) + '">') +
           "</div>";
       });
       thumbs.innerHTML = thtml;
       /* default main */
       var mainMedia = p.video ? p.video : p.gallery[0];
-      mainImg.src = p.gallery[0];
+      mainImg.src = BASE + p.gallery[0];
       mainImg.alt = p.name;
       thumbs.querySelectorAll(".pd-thumb").forEach(function (t) {
         t.addEventListener("click", function () {
           var src = t.getAttribute("data-src");
           var isV = t.getAttribute("data-video") === "true";
-          mainImg.src = isV ? p.image : src;
+          mainImg.src = isV ? BASE + p.image : src;
           /* open video in lightbox if it's video; else swap */
           if (isV) openLightbox(src, true);
           else mainImg.src = src;
@@ -448,7 +454,7 @@
       p.amenityGallery.forEach(function (item) {
         ag +=
           '<figure class="amenity-fig">' +
-            '<img src="' + item.img + '" alt="' + item.label + '" loading="lazy">' +
+            '<img src="' + BASE + item.img + '" alt="' + item.label + '" loading="lazy">' +
             "<figcaption>" + item.label + "</figcaption>" +
           "</figure>";
       });

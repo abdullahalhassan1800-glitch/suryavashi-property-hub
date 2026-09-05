@@ -6,6 +6,8 @@
 var VIHAAN = {
   brand: "Suryavashi Property Hub",
   tagline: "Crafting Trustworthy Homes & Premium Spaces",
+  /* Base path of the site on the server (GitHub Pages sub-path). */
+  base: "/suryavashi-property-hub/",
   phone: "+91-XXXXX XXXXX",
   phoneHref: "tel:+919732300007",
   whatsapp: "https://wa.me/919732300007",
@@ -76,6 +78,11 @@ var VIHAAN = {
         { img: "images/projects/green-heaven-amenities/top-view.jpg", label: "Top View of Society" },
       ],
       video: "images/projects/green-heaven-video.mp4",
+      videos: [
+        "images/projects/green-heaven-video-1.mp4",
+        "images/projects/green-heaven-video-2.mp4",
+        "images/projects/green-heaven-video.mp4",
+      ],
       rera: "RERA Registered",
       possession: "Contact us for details",
       description:
