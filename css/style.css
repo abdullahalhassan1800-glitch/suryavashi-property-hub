@@ -226,10 +226,10 @@ h4 { font-size: 1.02rem; }
 
 /* CDANA-style masked word reveal for the hero headline */
 .hero h1 .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.12em; margin-bottom: -0.12em; margin-right: 0.22em; }
-.js .hero h1 .wi { display: inline-block; transform: translateY(115%); }
-.js .hero-content.hero-in h1 .wi { animation: heroWordUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.js.js-reveal .hero h1 .wi { display: inline-block; transform: translateY(115%); }
+.js.js-reveal .hero-content.hero-in h1 .wi { animation: heroWordUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
 @keyframes heroWordUp { to { transform: none; } }
-@media (prefers-reduced-motion: reduce) { .js .hero h1 .wi { transform: none; animation: none; } }
+@media (prefers-reduced-motion: reduce) { .js.js-reveal .hero h1 .wi { transform: none; animation: none; } }
 .hero p { color: rgba(255,255,255,0.88); font-size: 1rem; max-width: 520px; margin-bottom: var(--sp-3); }
 .hero-badges { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-3); }
 .hero-badge {
@@ -605,19 +605,19 @@ h4 { font-size: 1.02rem; }
 
 /* ============================ REVEAL ============================ */
 /* Gated behind .js on <html>: if JS fails or is disabled, content stays visible. */
-.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1); }
+.js.js-reveal .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1); }
 .js .reveal.revealed { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .js.js-reveal .reveal { opacity: 1; transform: none; } }
 
 /* Staggered card reveals for a smooth cascade */
 .proj-grid .reveal:nth-child(2), .blog-grid .reveal:nth-child(2), .feature-grid .reveal:nth-child(2), .value-grid .reveal:nth-child(2), .amenity-grid .reveal:nth-child(2) { transition-delay: 90ms; }
 .proj-grid .reveal:nth-child(3), .blog-grid .reveal:nth-child(3), .feature-grid .reveal:nth-child(3), .value-grid .reveal:nth-child(3), .amenity-grid .reveal:nth-child(3) { transition-delay: 180ms; }
 
 /* Hero entrance animation */
-.js .hero-content { opacity: 0; transform: translateY(24px); }
-.js .hero-content.hero-in { animation: heroIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards; }
+.js.js-reveal .hero-content { opacity: 0; transform: translateY(24px); }
+.js.js-reveal .hero-content.hero-in { animation: heroIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards; }
 @keyframes heroIn { to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .js .hero-content { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .js.js-reveal .hero-content { opacity: 1; transform: none; } }
 
 /* Cinematic hero cascade: elements rise in one after another (headline uses word reveal) */
 .js .hero-content.hero-in .eyebrow,

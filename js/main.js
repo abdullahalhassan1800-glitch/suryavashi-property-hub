@@ -6,8 +6,11 @@
 (function () {
   "use strict";
 
-  /* Flag JS availability for progressive enhancement (CSS gates .reveal) */
-  document.documentElement.classList.add("js");
+  /* Flag JS availability for progressive enhancement. The extra "js-reveal"
+     class is added here so that if this file ever fails to load/parse, the CSS
+     hiding rules (.js.js-reveal ...) never apply and the page stays visible
+     instead of looking blank. */
+  document.documentElement.classList.add("js", "js-reveal");
 
   /* Absolute base used when building image/link paths for any page depth.
      On GitHub Pages the site lives at /suryavashi-property-hub/, locally at /. */
