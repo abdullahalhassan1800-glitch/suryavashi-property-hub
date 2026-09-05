@@ -240,10 +240,10 @@ h4 { font-size: 1.02rem; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
 
 /* ============================ STATS ============================ */
-.stats { background: linear-gradient(180deg, var(--navy-800) 0%, var(--navy) 100%); color: var(--white); }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-5); text-align: center; }
-.stat-num { font-family: var(--font-serif); font-size: clamp(1.85rem, 3.2vw, 2.5rem); color: var(--gold-light); font-weight: 700; }
-.stat-label { color: rgba(255,255,255,0.78); margin-top: var(--sp-1); font-size: 0.9rem; letter-spacing: 0.03em; }
+.stats { background: linear-gradient(180deg, var(--navy-800) 0%, var(--navy) 100%); color: var(--white); padding-block: var(--sp-1); }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3); text-align: center; }
+.stat-num { font-family: var(--font-serif); font-size: clamp(1.45rem, 2.6vw, 1.9rem); color: var(--gold-light); font-weight: 700; line-height: 1.1; }
+.stat-label { color: rgba(255,255,255,0.78); margin-top: 0; font-size: 0.8rem; letter-spacing: 0.03em; }
 
 /* ============================ CARDS / PROJECT ============================ */
 .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--sp-5); }
