@@ -12,7 +12,7 @@ var VIHAAN = {
   phoneHref: "tel:+919732300007",
   whatsapp: "https://wa.me/919732300007",
   email: "info@suryavashiproperty.com",
-  address: "Sector 16, Greater Noida West, Uttar Pradesh, India",
+  address: "Sector 1, Greater Noida West, Uttar Pradesh, India",
   rera: "Suryavashi Property Hub — RERA Registered Projects",
 
   /* Trust badges shown in the homepage running ticker */
@@ -21,7 +21,7 @@ var VIHAAN = {
     "Bank Tie-ups · HDFC · ICICI",
     "100% Transparent Process",
     "Free Site Visit & Consultation",
-    "Greater Noida West · Sector 16",
+    "Greater Noida West · Sector 1",
     "No Hidden Charges",
     "24×7 Customer Support",
     "Verified RERA Compliance",
@@ -51,7 +51,7 @@ var VIHAAN = {
       id: "green-heaven",
       name: "Green Heaven",
       type: "Residential",
-      location: "Sector 16, Greater Noida West (near Sparsh Global School)",
+      location: "Sector 1, Greater Noida West (near Sparsh Global School)",
       configs: ["2 BHK", "3 BHK"],
       price: "Call for Price",
       callForPrice: true,
@@ -86,13 +86,13 @@ var VIHAAN = {
       rera: "RERA Registered",
       possession: "Contact us for details",
       description:
-        "Green Heaven is a thoughtfully crafted gated residential community by Suryavashi Property Hub, balancing modern comfort with an eco-conscious, greenery-rich living experience. Nestled in Sector 16, Greater Noida West near Sparsh Global School, it offers 2 & 3 BHK residences designed for families who value space, safety and serenity.",
+        "Green Heaven is a thoughtfully crafted gated residential community by Suryavashi Property Hub, balancing modern comfort with an eco-conscious, greenery-rich living experience. Nestled in Sector 1, Greater Noida West near Sparsh Global School, it offers 2 & 3 BHK residences designed for families who value space, safety and serenity.",
       longDescription:
         "Green Heaven reimagines everyday living with vibrant landscaping, open courtyards and premium common amenities. Every residence is planned with generous natural light, efficient layouts and high-quality finishes. As a gated society, residents enjoy protected common areas, dedicated parking and round-the-clock security — a true sanctuary amid the fast-growing Noida West corridor. Positioned close to schools, retail and upcoming infrastructure, Green Heaven is equally suited for end-users and long-term investors seeking balanced appreciation.",
       facts: [
         { k: "Project Type", v: "Residential" },
         { k: "Configurations", v: "2 & 3 BHK" },
-        { k: "Location", v: "Sec-16, G. Noida West" },
+        { k: "Location", v: "Sec-1, G. Noida West" },
         { k: "Status", v: "New Launch" },
         { k: "RERA", v: "Registered" },
         { k: "Possession", v: "On Request" },

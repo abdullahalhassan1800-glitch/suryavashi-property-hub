@@ -602,7 +602,7 @@
   if (branchSel && branchInfo) {
     var branches = {
       "Noida (Head Office)": "2nd Floor, Tower-B, Tapasya Corporate Heights, Sector 126, Noida, UP 201313",
-      "Greater Noida West": "Sector 16, Greater Noida West, Uttar Pradesh",
+      "Greater Noida West": "Sector 1, Greater Noida West, Uttar Pradesh",
       "Delhi / NCR": "Patparganj, Delhi — landmark site",
     };
     branchSel.addEventListener("change", function () {

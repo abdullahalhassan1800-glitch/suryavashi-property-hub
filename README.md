@@ -1,6 +1,6 @@
 # Vihaan Group — Real Estate Website
 
-A static real estate website for **Vihaan Group**, featuring the **Green Heaven** project (Sector 16, Greater Noida West).
+A static real estate website for **Vihaan Group**, featuring the **Green Heaven** project (Sector 1, Greater Noida West).
 
 ## Pages
 - `index.html` — Homepage (hero, stats, featured projects, amenity gallery, testimonials)

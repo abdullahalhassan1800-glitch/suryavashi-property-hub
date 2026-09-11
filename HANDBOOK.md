@@ -37,7 +37,7 @@ website/
   id: "green-heaven",
   name: "Green Heaven",
   type: "Residential",
-  location: "Sector 16, Greater Noida West (near Sparsh Global School)",
+  location: "Sector 1, Greater Noida West (near Sparsh Global School)",
   configs: ["2 BHK", "3 BHK"],
   price: "Call for Price",
   callForPrice: true,
