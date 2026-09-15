@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SURYAVASHI PROPERTY HUB — Main JS
+   Suryavanshi PROPERTY HUB — Main JS
    Nav, mobile menu, counters, carousel, testimonials, filters, gallery,
    forms, lightbox.
    ========================================================================== */
@@ -153,7 +153,7 @@
   /* ---------- Floating WhatsApp button ---------- */
   var waBtn = document.createElement("a");
   waBtn.className = "wa-float";
-  waBtn.setAttribute("href", "https://wa.me/919732300007?text=" + encodeURIComponent("Hello Suryavashi Property Hub, I'd like to enquire about Green Heaven."));
+  waBtn.setAttribute("href", "https://wa.me/919732300007?text=" + encodeURIComponent("Hello Suryavanshi Property Hub, I'd like to enquire about Green Heaven."));
   waBtn.setAttribute("target", "_blank");
   waBtn.setAttribute("rel", "noopener");
   waBtn.setAttribute("aria-label", "Chat on WhatsApp");
@@ -288,7 +288,6 @@
         '<div class="proj-details">' +
           (d.area ? '<div class="pd-item"><span class="pd-ic">📐</span><span>' + d.area + "</span></div>" : "") +
           (d.possession ? '<div class="pd-item"><span class="pd-ic">🗓️</span><span>' + d.possession + "</span></div>" : "") +
-          (d.rera ? '<div class="pd-item"><span class="pd-ic">✔</span><span>' + d.rera + "</span></div>" : "") +
           (d.floors ? '<div class="pd-item"><span class="pd-ic">🏢</span><span>' + d.floors + "</span></div>" : "") +
         "</div>";
     }
@@ -602,7 +601,7 @@
   if (branchSel && branchInfo) {
     var branches = {
       "Noida (Head Office)": "2nd Floor, Tower-B, Tapasya Corporate Heights, Sector 126, Noida, UP 201313",
-      "Greater Noida West": "Sector 1, Greater Noida West, Uttar Pradesh",
+      "Greater Noida West": "Sector 20, Greater Noida West, Uttar Pradesh",
       "Delhi / NCR": "Patparganj, Delhi — landmark site",
     };
     branchSel.addEventListener("change", function () {

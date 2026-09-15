@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Suryavashi Property Hub — Data Layer
+   Suryavanshi Property Hub — Data Layer
    Central source of truth for projects & blog content.
    ========================================================================== */
 
 var VIHAAN = {
-  brand: "Suryavashi Property Hub",
+  brand: "Suryavanshi Property Hub",
   tagline: "Crafting Trustworthy Homes & Premium Spaces",
   /* Base path of the site on the server (GitHub Pages sub-path). */
   base: "/suryavashi-property-hub/",
@@ -12,19 +12,16 @@ var VIHAAN = {
   phoneHref: "tel:+919732300007",
   whatsapp: "https://wa.me/919732300007",
   email: "info@suryavashiproperty.com",
-  address: "Sector 1, Greater Noida West, Uttar Pradesh, India",
-  rera: "Suryavashi Property Hub — RERA Registered Projects",
+  address: "Sector 20, Greater Noida West, Uttar Pradesh, India",
 
   /* Trust badges shown in the homepage running ticker */
   trust: [
-    "RERA Registered Project",
     "Bank Tie-ups · HDFC · ICICI",
     "100% Transparent Process",
     "Free Site Visit & Consultation",
-    "Greater Noida West · Sector 1",
+    "Greater Noida West · Sector 20",
     "No Hidden Charges",
     "24×7 Customer Support",
-    "Verified RERA Compliance",
   ],
 
   /*
@@ -51,13 +48,13 @@ var VIHAAN = {
       id: "green-heaven",
       name: "Green Heaven",
       type: "Residential",
-      location: "Sector 1, Greater Noida West (near Sparsh Global School)",
+      location: "Sector 20, Greater Noida West (near Sparsh Global School)",
       configs: ["2 BHK", "3 BHK"],
       price: "Call for Price",
       callForPrice: true,
       tag: "New Launch",
       status: "featured",
-      developer: "Suryavashi Property Hub",
+      developer: "Suryavanshi Property Hub",
       image: "images/projects/green-heaven-1.jpg?v=12",
       gallery: [
         "images/projects/green-heaven-1.jpg",
@@ -83,24 +80,21 @@ var VIHAAN = {
         "images/projects/green-heaven-video-2.mp4",
         "images/projects/green-heaven-video.mp4",
       ],
-      rera: "RERA Registered",
       possession: "Contact us for details",
       description:
-        "Green Heaven is a thoughtfully crafted gated residential community by Suryavashi Property Hub, balancing modern comfort with an eco-conscious, greenery-rich living experience. Nestled in Sector 1, Greater Noida West near Sparsh Global School, it offers 2 & 3 BHK residences designed for families who value space, safety and serenity.",
+        "Green Heaven is a thoughtfully crafted gated residential community by Suryavanshi Property Hub, balancing modern comfort with an eco-conscious, greenery-rich living experience. Nestled in Sector 20, Greater Noida West near Sparsh Global School, it offers 2 & 3 BHK residences designed for families who value space, safety and serenity.",
       longDescription:
         "Green Heaven reimagines everyday living with vibrant landscaping, open courtyards and premium common amenities. Every residence is planned with generous natural light, efficient layouts and high-quality finishes. As a gated society, residents enjoy protected common areas, dedicated parking and round-the-clock security — a true sanctuary amid the fast-growing Noida West corridor. Positioned close to schools, retail and upcoming infrastructure, Green Heaven is equally suited for end-users and long-term investors seeking balanced appreciation.",
       facts: [
         { k: "Project Type", v: "Residential" },
         { k: "Configurations", v: "2 & 3 BHK" },
-        { k: "Location", v: "Sec-1, G. Noida West" },
+        { k: "Location", v: "Sec-20, G. Noida West" },
         { k: "Status", v: "New Launch" },
-        { k: "RERA", v: "Registered" },
         { k: "Possession", v: "On Request" },
       ],
       details: {
         area: "Carpet Area: 1,050 – 1,650 sq.ft.",
         possession: "Ready to Possess",
-        rera: "RERA Registered",
         amenities: "Pool · Club House · Gym · Temple · Park",
         floors: "G+15 Floors"
       }
@@ -111,34 +105,32 @@ var VIHAAN = {
       type: "Residential",
       location: "Greater Noida West",
       configs: ["2 BHK", "3 BHK", "4 BHK"],
-      price: "Coming Soon",
-      tag: "Upcoming",
-      status: "upcoming",
-      developer: "Suryavashi Property Hub",
+      price: "Call for Price",
+      callForPrice: true,
+      tag: "New Launch",
+      status: "featured",
+      developer: "Suryavanshi Property Hub",
       image: "images/projects/vihaan-wardenia-1.jpg",
       gallery: [
         "images/projects/vihaan-wardenia-1.jpg",
         "images/projects/vihaan-wardenia-2.jpg",
       ],
       video: null,
-      rera: "RERA Registered",
-      possession: "Coming Soon",
+      possession: "On Request",
       description:
-        "Vihaan Wardenia is an upcoming premium residential offering from Suryavashi Property Hub, bringing signature quality and lifestyle amenities to the Greater Noida West landscape.",
+        "Vihaan Wardenia is a newly launched premium residential offering from Suryavanshi Property Hub, bringing signature quality and lifestyle amenities to the Greater Noida West landscape.",
       longDescription:
         "Vihaan Wardenia is poised to set a new benchmark for community living with expansive layouts, resort-style amenities and a prime North NCR location. Stay tuned for full details, floor plans and launch pricing.",
       facts: [
         { k: "Project Type", v: "Residential" },
         { k: "Configurations", v: "2 / 3 / 4 BHK" },
         { k: "Location", v: "Greater Noida West" },
-        { k: "Status", v: "Upcoming" },
-        { k: "RERA", v: "Registered" },
-        { k: "Possession", v: "Coming Soon" },
+        { k: "Status", v: "New Launch" },
+        { k: "Possession", v: "On Request" },
       ],
       details: {
         area: "Configurable 1,100 – 2,200 sq.ft.",
-        possession: "Launch Details Coming Soon",
-        rera: "RERA Registered",
+        possession: "Launch Details On Request",
         amenities: "Club House · Pool · Gym · Green Spaces",
         floors: "Premium Residential & MFD"
       }
@@ -155,7 +147,7 @@ var VIHAAN = {
   testimonials: [
     {
       quote:
-        "Suryavashi Property Hub guided us through the entire purchase with complete clarity. The team was transparent, responsive and made the process feel effortless.",
+        "Suryavanshi Property Hub guided us through the entire purchase with complete clarity. The team was transparent, responsive and made the process feel effortless.",
       author: "Rahul Sharma",
       role: "Home Buyer, Green Heaven",
     },
@@ -183,7 +175,7 @@ var VIHAAN = {
       date: "Sep 02, 2026",
       read: "4 min read",
       excerpt:
-        "Discover how Green Heaven by Suryavashi Property Hub blends gated security, lush landscaping and premium 2 & 3 BHK residences in the heart of Greater Noida West.",
+        "Discover how Green Heaven by Suryavanshi Property Hub blends gated security, lush landscaping and premium 2 & 3 BHK residences in the heart of Greater Noida West.",
     },
     {
       id: "noida-west-growth",
@@ -203,7 +195,7 @@ var VIHAAN = {
       date: "Aug 20, 2026",
       read: "6 min read",
       excerpt:
-        "RERA verification, developer track record, amenities, location and total cost — a practical checklist to protect your investment from day one.",
+        "Developer track record, amenities, location and total cost — a practical checklist to protect your investment from day one.",
     },
   ],
 };

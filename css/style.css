@@ -470,7 +470,7 @@ h4 { font-size: 1.02rem; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-block: var(--sp-3); }
 .footer-bottom-inner { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-3); flex-wrap: wrap; font-size: 0.85rem; }
 .footer-bottom-links { display: flex; gap: var(--sp-4); }
-.footer-rera { margin-top: var(--sp-2); font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.footer-note { margin-top: var(--sp-2); font-size: 0.78rem; color: rgba(255,255,255,0.5); }
 .footer-hours { font-size: 0.85rem; line-height: 1.45; }
 .footer-hours strong { display: block; font-weight: 600; letter-spacing: 0.04em; }
 .ft-call { margin-top: var(--sp-3); padding: 0.6rem 1.2rem; font-size: 0.85rem; color: var(--navy); }
