@@ -153,7 +153,7 @@
   /* ---------- Floating WhatsApp button ---------- */
   var waBtn = document.createElement("a");
   waBtn.className = "wa-float";
-  waBtn.setAttribute("href", "https://wa.me/919732300007?text=" + encodeURIComponent("Hello Suryavanshi Property Hub, I'd like to enquire about Green Heaven."));
+  waBtn.setAttribute("href", "https://wa.me/919315605036?text=" + encodeURIComponent("Hello Suryavanshi Property Hub, I'd like to enquire about Green Heaven."));
   waBtn.setAttribute("target", "_blank");
   waBtn.setAttribute("rel", "noopener");
   waBtn.setAttribute("aria-label", "Chat on WhatsApp");
@@ -587,7 +587,7 @@
         form.reset();
         if (btn) { btn.textContent = originalText; btn.disabled = false; }
         if (sendWa) {
-          window.open("https://wa.me/919732300007?text=" + encodeURIComponent(text), "_blank");
+          window.open("https://wa.me/919315605036?text=" + encodeURIComponent(text), "_blank");
         }
       }, 300);
     });

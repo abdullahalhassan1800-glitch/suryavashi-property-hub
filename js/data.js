@@ -8,9 +8,9 @@ var VIHAAN = {
   tagline: "Crafting Trustworthy Homes & Premium Spaces",
   /* Base path of the site on the server (GitHub Pages sub-path). */
   base: "/suryavashi-property-hub/",
-  phone: "+91-XXXXX XXXXX",
-  phoneHref: "tel:+919732300007",
-  whatsapp: "https://wa.me/919732300007",
+  phone: "+91 93156 05036",
+  phoneHref: "tel:+919315605036",
+  whatsapp: "https://wa.me/919315605036",
   email: "info@suryavashiproperty.com",
   address: "Sector 20, Greater Noida West, Uttar Pradesh, India",
 
