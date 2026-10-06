@@ -726,6 +726,9 @@ h4 { font-size: 1.02rem; }
 .mt-1 { margin-top: var(--sp-3); } .mt-2 { margin-top: var(--sp-4); } .mt-3 { margin-top: var(--sp-5); }
 .bg-grey { background: linear-gradient(180deg, var(--grey-50) 0%, var(--grey-100) 100%); }
 
+/* Optional tagline shown on project cards that define one (e.g. Embassy Autograph) */
+.proj-tagline { font-family: var(--font-serif); font-size: 0.92rem; font-style: italic; color: var(--gold); margin: -4px 0 8px; }
+
 /* ============================ RESPONSIVE ============================ */
 @media (max-width: 1024px) {
   .pd-layout { grid-template-columns: 1fr; }

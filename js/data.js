@@ -128,13 +128,29 @@ var VIHAAN = {
         { k: "Status", v: "New Launch" },
         { k: "Possession", v: "On Request" },
       ],
-      details: {
-        area: "Configurable 1,100 – 2,200 sq.ft.",
-        possession: "Launch Details On Request",
-        amenities: "Club House · Pool · Gym · Green Spaces",
-        floors: "Premium Residential & MFD"
-      }
-    },
+        details: {
+          area: "Configurable 1,100 – 2,200 sq.ft.",
+          possession: "Launch Details On Request",
+          amenities: "Club House · Pool · Gym · Green Spaces",
+          floors: "Premium Residential & MFD"
+        }
+      },
+      {
+        id: "embassy-autograph",
+        name: "Embassy Autograph",
+        tagline: "An Address of Elegance",
+        /* Dedicated static page instead of project-detail/ */
+        url: "embassy-autograph/",
+        type: "Residential",
+        location: "Sector 10, Greater Noida West",
+        configs: ["Low-AQI", "7 Premium Towers", "225+ Apartments"],
+        price: "Call for Price",
+        callForPrice: true,
+        tag: "Soft Launch",
+        status: "featured",
+        developer: "Saraswati Group of Housing",
+        image: "images/embassy-autograph/ea-hero.jpg"
+      },
   ],
 
   getProject: function (id) {

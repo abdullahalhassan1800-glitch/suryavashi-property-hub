@@ -279,7 +279,8 @@
       return '<span class="chip">' + c + "</span>";
     }).join("");
     var tagCls = p.tag === "New Launch" ? "" : " tag-navy";
-    var page = BASE + "project-detail/?id=" + p.id;
+    /* Projects with their own page (p.url) link there instead of project-detail/ */
+    var page = BASE + (p.url ? p.url : "project-detail/?id=" + p.id);
 
     var detailsHtml = "";
     if (p.details) {
@@ -309,13 +310,14 @@
         "</a>" +
         '<div class="proj-body">' +
           '<div class="proj-loc">' + p.location + "</div>" +
-          "<h3>" + p.name + "</h3>" +
-          '<div class="proj-config">' + chips + "</div>" +
-          detailsHtml +
-          '<div class="proj-foot">' +
-            priceHtml +
-            '<a class="link-arrow" href="' + page + '">View Details →</a>' +
-          "</div>" +
+        "<h3>" + p.name + "</h3>" +
+        (p.tagline ? '<div class="proj-tagline">' + p.tagline + "</div>" : "") +
+        '<div class="proj-config">' + chips + "</div>" +
+        detailsHtml +
+        '<div class="proj-foot">' +
+          priceHtml +
+          '<a class="link-arrow" href="' + page + '">' + (p.url ? "View Project" : "View Details") + " →</a>" +
+        "</div>" +
         "</div>" +
       "</article>"
     );
@@ -358,7 +360,8 @@
     var params = new URLSearchParams(window.location.search);
     var id = params.get("id") || "green-heaven";
     var p = VIHAAN.getProject(id);
-    if (!p) p = VIHAAN.projects[0];
+    /* Projects with a dedicated page (no gallery here) fall back to the first one */
+    if (!p || !p.gallery || !p.gallery.length) p = VIHAAN.projects[0];
 
     /* Gallery */
     var gallery = document.getElementById("pdGallery");
