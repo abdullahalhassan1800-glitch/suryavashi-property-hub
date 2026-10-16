@@ -16,7 +16,7 @@ var VIHAAN = {
 
   /* Trust badges shown in the homepage running ticker */
   trust: [
-    "Bank Tie-ups · HDFC · ICICI",
+    "Bank Tie-ups · HDFC · ICICI · NBFC",
     "100% Transparent Process",
     "Free Site Visit & Consultation",
     "Greater Noida West · Sector 20",
