@@ -598,6 +598,19 @@
   attachForm("contactForm", "contactMsg");
   attachForm("enqForm", "enqMsg");
 
+  /* ---------- Contact page branch select ---------- */
+  var branchSel = document.getElementById("branchSelect");
+  var branchInfo = document.getElementById("branchInfo");
+  if (branchSel && branchInfo) {
+    var branches = {
+      "Noida (Head Office)": "2nd Floor, Tower-B, Tapasya Corporate Heights, Sector 126, Noida, UP 201313",
+      "Greater Noida West": "Ch Lakshmi Singh Market, Near Arihant Ambar Society, Sector-1, Greater Noida West, 201318",
+      "Delhi / NCR": "Patparganj, Delhi — landmark site",
+    };
+    branchSel.addEventListener("change", function () {
+      branchInfo.textContent = branches[branchSel.value] || branches[Object.keys(branches)[0]];
+    });
+  }
 /* ---------- Trust badge running ticker (homepage) ---------- */
   var trustWrap = document.getElementById("trustTicker");
   if (trustWrap && VIHAAN.trust && VIHAAN.trust.length) {
