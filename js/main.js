@@ -604,7 +604,7 @@
   if (branchSel && branchInfo) {
     var branches = {
       "Noida (Head Office)": "2nd Floor, Tower-B, Tapasya Corporate Heights, Sector 126, Noida, UP 201313",
-      "Greater Noida West": "Sector 20, Greater Noida West, Uttar Pradesh",
+      "Greater Noida West": "Ch Lakshmi Singh Market, Near Arihant Ambar Society, Sector-1, Greater Noida West, 201318",
       "Delhi / NCR": "Patparganj, Delhi — landmark site",
     };
     branchSel.addEventListener("change", function () {

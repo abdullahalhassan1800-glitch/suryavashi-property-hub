@@ -12,7 +12,7 @@ var VIHAAN = {
   phoneHref: "tel:+919315605036",
   whatsapp: "https://wa.me/919315605036",
   email: "info@suryavashiproperty.com",
-  address: "Sector 20, Greater Noida West, Uttar Pradesh, India",
+  address: "Ch Lakshmi Singh Market, Near Arihant Ambar Society, Sector-1, Greater Noida West, 201318",
 
   /* Trust badges shown in the homepage running ticker */
   trust: [
